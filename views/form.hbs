@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Good Vibes Form</title>
+    <link rel="stylesheet" href="../public/css/styles.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body{
+    background-color: #a685e2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+form{
+    background-color: #f4f4f4;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.name{
+    display: flex;
+}
+
+.name, .phone, .email, .scale, .where, .what-time,.emotions,.experience, .gender, .tnc{
+    width: 80%;
+    display: flex;
+    margin-top: 30px;
+    
+}
+.label{
+    width: 50%;
+    text-align: right;
+    margin-right: 10px;
+    font-size:medium;
+}
+.input{
+    width: 80%;
+    text-align: left;
+    margin-left: 10px;
+}
+input[type="submit"]{
+    width: 100px;
+    height: 40px;
+    font-size: large;
+    margin-top: 50px;
+    box-sizing: border-box;
+    background-color: #583d72;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+h1{
+    font-size: 40px;
+    margin: 15px auto;
+}
+
+    </style>
+  </head>
+
+  <body>
+    <h1>Good Vibes Form</h1>
+    <form action="/form" method="POST">
+      <div class="name">
+        <div class="label">
+          <label for="name">Name:</label>
+        </div>
+        <div class="input">
+          <input
+            style="width: 60%; height: 25px"
+            type="text"
+            id="name"
+            placeholder="Enter Your Name"
+            required="required"
+            name="name"
+            value={{name}}
+          >
+        </div>
+      </div>
+
+      <div class="email">
+        <div class="label">
+          <label for="emailid">Email:</label>
+        </div>
+        <div class="input">
+          <input
+            style="width: 60%; height: 25px"
+            type="email"
+            id="emailid"
+            required="required"
+            placeholder="Enter Your Email"
+            name="email"
+            value={{email}}
+            >
+        </div>
+      </div>
+
+      <div class="scale">
+        <div class="label">
+          <label for="scale">On a Scale of 1 to 10 how good it was:</label>
+        </div>
+        <div class="input">
+          <input
+            style="width: 60%; height: 25px"
+            type="number"
+            id="scale"
+            placeholder="Enter a number between 1 to 10"
+            {{!-- required="required" --}}
+            name="scale"
+            value={{scale}}
+            >
+        </div>
+      </div>
+
+      <div class="where">
+        <div class="label">
+          <label for="where">Where did it happen:</label>
+        </div>
+        <div class="input">
+          <select name="where" id="where" value={{where}}>
+            <option value="at home" selected>At home</option>
+            <option value="at school">At school</option>
+            <option value="at a shop">At a Shop</option>
+            <option value="at hotel">At hotel</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="what-time">
+        <div class="label">
+          <label for="what-time">At what time of the day did it happen:</label>
+        </div>
+        <div class="input">
+          <input type="radio" id="morning" name="time" value="morning">
+          <label for="morning">Morning</label><br />
+          <input type="radio" id="afternoon" name="time" value="afternoon">
+          <label for="afternoon">Afternoon</label><br />
+          <input type="radio" id="evening" name="time" value="evening">
+          <label for="evening">Evening</label>
+        </div>
+      </div>
+
+      <div class="emotions">
+        <div class="label">
+          <label for="emotions">
+            What emotions did you experience ? (Select all that apply)
+          </label>
+        </div>
+        <div class="input">
+          <input type="checkbox" id="Excited" name="emotion" value="excited">
+          <label for="Excited"> Excited</label><br />
+
+          <input type="checkbox" id="Humbled" name="emotion" value="humbled">
+          <label for="Humbled"> Humbled</label><br />
+
+          <input type="checkbox" id="Elated" name="emotion" value="elated">
+          <label for="Elated"> Elated </label><br />
+
+          <input type="checkbox" id="Loved" name="emotion" value="loved">
+          <label for="Loved"> Loved </label> <br />
+
+          <input
+            type="checkbox"
+            id="Enthusiastic"
+            name="Enthusiastic"
+            value="enthusiastic"
+          />
+          <label for="Enthusiastic"> Enthusiastic </label>
+        </div>
+      </div>
+
+      <div class="experience">
+        <div class="label">
+          <label for="experience"
+            >Please Descibe your Positive Experience:</label
+          >
+        </div>
+        <div class="input">
+          <textarea
+            placeholder="Describe yourself here..."
+            id="experience"
+            name="experience"
+            rows="4"
+            cols="50"
+            name="comment"
+            value="comment"
+          >
+          </textarea>
+        </div>
+      </div>
+
+      <input
+        type="submit"
+        value="SUBMIT"
+        name="Submit"
+      />
+
+    </form>
+  </body>
+</html>
